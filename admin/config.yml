@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+locale: tr
+
+media_folder: "images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog Yazıları"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "blog/{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD.MM.YYYY", time_format: false }
+      - { label: "Özet (SEO için)", name: "excerpt", widget: "text", hint: "Google'da çıkacak açıklama, 150-160 karakter" }
+      - label: "Kapak Görseli"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Opsiyonel — önerilen boyut 1200x630px"
+      - label: "Kategori"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Trafik Cezaları", value: "trafik-cezalari" }
+          - { label: "Hız İhlali", value: "hiz-ihlali" }
+          - { label: "Alkollü Sürüş", value: "alkol" }
+          - { label: "Sürücü Hakları", value: "surucu-haklari" }
+          - { label: "Kanun Değişiklikleri", value: "kanun" }
+          - { label: "Genel", value: "genel" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
