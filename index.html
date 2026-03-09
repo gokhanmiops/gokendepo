@@ -706,6 +706,78 @@ html.light .fine-row { border-bottom-color: var(--border); }
 .not-found h3 { font-size: 16px; margin-bottom: 8px; }
 .not-found p  { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
+/* ── ÖNERİLEN YAZILAR ── */
+.blog-section {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  padding: 0 20px;
+}
+.blog-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surf);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  gap: 14px;
+}
+.blog-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(232,64,26,.12);
+}
+.blog-card-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+.blog-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.blog-card-cat {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+.blog-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--text);
+}
+.blog-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+}
+.blog-card-read {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin-top: 4px;
+}
+
 /* ── FAQ (SEO) ── */
 .faq-section {
   margin-top: 64px;
@@ -912,6 +984,38 @@ footer {
     </div>
     <div id="results"></div>
   </main>
+
+  <!-- ÖNERİLEN YAZILAR -->
+  <section class="blog-section" aria-labelledby="blog-title">
+    <h2 id="blog-title">Önerilen Yazılar</h2>
+    <div class="blog-grid">
+
+      <!-- YAZI KARTI — kopyalayıp çoğaltabilirsin -->
+      <a class="blog-card" href="/app-plaka-cezasi-2026.html">
+        <div class="blog-card-icon">🚗</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Plaka &amp; Tescil</span>
+          <h3>APP Plaka Nedir? 2026 Cezası ve Değiştirme Rehberi</h3>
+          <p>140.000 TL ceza, ehliyet iptali ve araç men yaptırımı. APP plakanız var mı? Nasıl değiştirirsiniz?</p>
+          <span class="blog-card-read">Devamını oku →</span>
+        </div>
+      </a>
+
+      <!-- YENİ YAZI EKLEMEk İÇİN BU BLOĞU KOPYALA -->
+      <!--
+      <a class="blog-card" href="/YAZI-DOSYA-ADI.html">
+        <div class="blog-card-icon">📋</div>
+        <div class="blog-card-body">
+          <span class="blog-card-cat">Kategori</span>
+          <h3>Yazi Basligi</h3>
+          <p>Kısa açıklama buraya gelir.</p>
+          <span class="blog-card-read">Devamını oku →</span>
+        </div>
+      </a>
+      -->
+
+    </div>
+  </section>
 
   <!-- FAQ (SEO) -->
   <section class="faq-section" aria-labelledby="faq-title">
